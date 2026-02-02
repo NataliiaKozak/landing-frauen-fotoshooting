@@ -155,8 +155,7 @@ async function submitToGoogleSheets(data) {
     q3r: data.quizAnswers?.q3 || '',
     q4: data.quizAnswers?.q4 || '',
     q5: data.quizAnswers?.q5 || '',
-    q6: data.quizAnswers?.q6 || '',
-    
+
     quiz_start_time: data.quizStartTime || '',
   };
 

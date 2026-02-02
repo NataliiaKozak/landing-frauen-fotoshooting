@@ -1,43 +1,13 @@
 /* ============================================================================
-   ABOUT (SECTION 10) — стабильная версия
-   COMMENT:
-   - Десктоп = базовые стили
-   - <=1199.98 (991–1200): двигаем всю композицию чуть вправо + подстраиваем размеры
-   - <=991.98: колонка, подложка скрыта
-   - правое фото и подложка имеют СВОИ координаты (top/left), без transform
+   ABOUT — single photo + text (как в макете)
+   Desktop = grid 2 колонки
+   <= 991.98 = как promotional (текст сверху, фото ниже, центр)
    ============================================================================ */
 
 .about {
-  /* ===== размеры и сетка (десктоп) ===== */
-  --about-size: 28rem; /* квадрат фото */
-  --about-gap: 1.75rem; /* вертикальный gap слева */
-  --about-col-gap: 4.5rem; /* расстояние между левым столбиком и правой колонкой */
-
-  --about-text-col: 32rem; /* фикс ширина текстовой колонки */
-  --about-wrap-max: 62rem; /* фикс ширина всей композиции */
-
-  --about-right-media-x: -1.75rem; /* правый блок (колонка 2, ряд 2) сдвигаем чуть влево под текст */
-  --about-right-media-y: 0rem; /* если нужно поднять ВЕСЬ правый блок (и фото и подложку вместе) — трогать это */
-
-  /* ===== отдельные координаты для ПРАВОГО ФОТО (без влияния на подложку) ===== */
-  --about-right-photo-x: 0rem;
-  --about-right-photo-y: -4rem; /* >1200: поднять фото выше — менять тут */
-
-  /* ===== отдельные координаты и размер ПОДЛОЖКИ (не зависят от фото) ===== */
-  --about-bg-size: 31rem;
-  --about-bg-x: -5.5rem;
-  --about-bg-y: -5.5rem;
-
-  /* ===== типографика  ===== */
-  --about-divider-mb: 2.25rem;
-  --about-title-mb: 1.5rem;
-  --about-title-lh: 1.12;
-
-  /* ===== опустить блок (divider+заголовок+текст) ниже относительно фото */
-  --about-content-y: 4rem;
-
-  /* ===== сдвиг всей композиции вправо (используем на 991–1200) ===== */
-  --about-grid-x: 0rem;
+  --about-photo-max: 28rem; /* ширина фото на десктопе */
+  --about-text-max: 34rem; /* ширина текстовой колонки */
+  --about-col-gap: 4.5rem; /* расстояние между колонками */
 }
 
 /* Divider */
@@ -46,84 +16,52 @@
   height: 1px;
   background: var(--color-black);
   opacity: 0.6;
-  margin-bottom: var(--about-divider-mb);
+  margin-bottom: 2.5rem;
 }
 
-/* Title tuning */
-.about__content h2 {
-  line-height: var(--about-title-lh);
-  margin-bottom: var(--about-title-mb) !important;
-}
-
-/* ============================================================================
-   DESKTOP DEFAULT
-   ============================================================================ */
-
+/* DESKTOP layout */
 .about__grid {
   display: grid;
-
-  max-width: var(--about-wrap-max);
-  margin-left: auto;
-  margin-right: auto;
-
-  /*  вместо inset/transform — простой “сдвиг вправо” через left */
-  position: relative;
-  left: var(--about-grid-x);
-
-  grid-template-columns: var(--about-size) var(--about-text-col);
-  grid-template-rows: auto auto;
-
+  grid-template-columns: minmax(16rem, var(--about-photo-max)) minmax(
+      18rem,
+      var(--about-text-max)
+    );
   column-gap: var(--about-col-gap);
-  row-gap: var(--about-gap);
-
   align-items: start;
 }
 
-/* Текст справа сверху */
+/* Позиции: фото слева, текст справа */
+.about__photo--left {
+  grid-column: 1;
+  grid-row: 1;
+}
 .about__content {
   grid-column: 2;
   grid-row: 1;
-  position: relative;
-  z-index: 3; /* чтобы подложка не залезала на текст */
-  margin-top: var(--about-content-y);
 }
 
-/* Левое верхнее фото */
-.about__photo--left-top {
-  grid-column: 1;
-  grid-row: 1;
+.about__content h2 {
+  margin-bottom: 1.25rem !important; /* было mb-2 */
+  line-height: 1.12;
 }
 
-/* Левое нижнее фото */
-.about__photo--left-bottom {
-  grid-column: 1;
-  grid-row: 2;
+/* Подзаголовок (bold) — больше воздуха до основного текста */
+.about__content .text-bold-big {
+  margin-bottom: 1.5rem !important; /* было mb-3 */
 }
 
-/* Правый контейнер (в нём лежат подложка + правое фото) */
-.about__right-media {
-  grid-column: 2;
-  grid-row: 2;
-
-  position: relative;
-  width: var(--about-size);
-  height: var(--about-size);
-
-  /* сдвиг под текст */
-  margin-left: var(--about-right-media-x);
-  margin-top: var(--about-right-media-y);
-
-  overflow: visible;
+/* Основной текст: можно чуть увеличить line-height для “дышания” */
+.about__content .text-medium-small {
+  line-height: 1.6;
 }
 
-/* Фото (общие) */
+/* Фото — “вертикальное” как в promotional */
 .about__photo {
-  width: var(--about-size);
-  height: var(--about-size);
+  width: 100%;
+  max-width: var(--about-photo-max);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 10px;
-  position: relative;
-  z-index: 2;
 }
 
 .about__photo img {
@@ -131,114 +69,39 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center 12%;
 }
 
-/* ===== ПРАВОЕ ФОТО — абсолютные координаты (НЕ transform) ===== */
-.about__right-media .about__photo--right {
-  position: absolute;
-  left: var(--about-right-photo-x);
-  top: var(--about-right-photo-y);
-
-  width: var(--about-size);
-  height: var(--about-size);
-}
-
-/* ===== ПОДЛОЖКА — абсолютные координаты (не зависят от фото) ===== */
-.about__bg {
-  position: absolute;
-  width: var(--about-bg-size);
-  height: var(--about-bg-size);
-
-  left: var(--about-bg-x);
-  top: var(--about-bg-y);
-
-  background: var(--color-gray);
-  opacity: 0.95;
-  z-index: 1;
-}
-
-/* ============================================================================
-   991–1200 (<= 1199.98)
-    - сместить весь блок правее + поднять правое фото
-     --about-grid-x (весь блок вправо)
-     --about-right-photo-y (поднять только фото)
-   ============================================================================ */
-@media (max-width: 1199.98px) {
-  .about {
-    /* чуть меньше размеры, чтобы всё выглядело аккуратно и не “липло” */
-    --about-size: 25rem;
-    --about-text-col: 29rem;
-    --about-wrap-max: 58rem;
-
-    --about-col-gap: 4.25rem; /* расстояние между левым столбиком и правой частью сохраняем */
-    --about-grid-x: 1rem; /* сдвинуть всю композицию вправо (чтобы не терлась о левый край контейнера) */
-    --about-right-media-x: -1.5rem; /* под текст чуть меньше “заезд” */
-    --about-right-photo-y: -3.75rem; /* поднять только фото */
-
-    /* подложку можно оставить как есть, но под новый размер обычно чуть меньше */
-    --about-bg-size: 28.5rem;
-    --about-bg-x: -5rem;
-    /* --about-bg-y оставляем  */
-    --about-content-y: 3.25rem;
-  }
-}
-
-/* ============================================================================
-   TABLET / MOBILE (<= 991.98px)
-   ============================================================================ */
+/* <= 991.98: как promotional (в колонку, фото центрируем) */
 @media (max-width: 991.98px) {
-  .about {
-    --about-content-y: 0rem;
-  }
-
   .about__grid {
-    max-width: none;
-    margin: 0;
-    left: 0;
-
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
 
-  .about__bg {
-    display: none;
-  }
-
-  .about__right-media {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-  }
-
-  /* вернуть правое фото в нормальный поток на мобилке */
-  .about__right-media .about__photo--right {
-    position: static;
-    width: 100%;
-    height: auto;
+  .about__content {
+    max-width: 36rem;
   }
 
   .about__photo {
-    width: 100%;
-    max-width: 36rem;
-    height: auto;
+    max-width: 34rem;
     margin-left: auto;
     margin-right: auto;
-
-    aspect-ratio: 4 / 5;
-    border-radius: 10px;
   }
 
   .about__photo img {
-    height: 100%;
+    object-position: center 16%;
   }
 }
 
 @media (max-width: 575.98px) {
   .about__divider {
     width: 7rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about__photo {
+    max-width: 100%;
   }
 }

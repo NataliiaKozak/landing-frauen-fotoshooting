@@ -102,9 +102,11 @@
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section class="hero bg-brand-primary">
       <div class="container">
-        <div class="row gx-4 gy-4 gy-lg-0 align-items-stretch hero__row">
+        <div
+          class="row gx-lg-5 gx-4 gy-4 gy-lg-0 align-items-stretch hero__row"
+        >
           <!-- LEFT -->
-          <div class="col-lg-7">
+          <div class="col-lg-6">
             <div class="hero__left pb-4">
               <div
                 class="hero__divider"
@@ -135,7 +137,7 @@
               </h1>
 
               <p
-                class="text-medium-small mt-3 mb-3"
+                class="text-medium-small mb-3"
                 data-reveal
                 data-reveal-delay="240"
               >
@@ -165,16 +167,15 @@
                 data-reveal
                 data-reveal-delay="480"
               >
-                Warum kostenlos? Damit ihr ganz ohne Risiko
-                meine Qualität testen und nur die Fotos kaufen könnt, die euch
-                gefallen.
+                Warum kostenlos? Damit ihr ganz ohne Risiko meine Qualität
+                testen und nur die Fotos kaufen könnt, die euch gefallen.
               </p>
             </div>
           </div>
 
           <!-- RIGHT (image) -->
           <div
-            class="col-lg-5 hero__col-media"
+            class="col-lg-6 hero__col-media"
             data-reveal
             data-reveal-delay="160"
           >
@@ -835,33 +836,35 @@
     >
       <div class="container">
         <div class="row g-4 g-md-5">
-          <!-- Card 1 (TEXT -> PHOTO как на макете) -->
+          <!-- Card 1 -->
           <div
             class="col-12 col-md-6 col-lg-3 d-flex"
             data-reveal
             data-reveal-delay="0"
           >
             <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/3.jpg"
+                  alt="Babybauch"
+                  loading="lazy"
+                />
+              </div>
+
               <div class="shooting-types__content">
                 <h3 class="text-bold-big mb-2">Babybauch</h3>
                 <p class="text-small mb-0">
                   Halte die Magie der Schwangerschaft in einzigartigen Bildern
                   fest und bewahre diese kostbaren Momente für die Ewigkeit.
                 </p>
-              </div>
 
-              <div class="shooting-types__media">
-                <img
-                  class="shooting-types__image"
-                  src="assets/images/13.jpg"
-                  alt="Beauty"
-                  loading="lazy"
-                />
+                <div class="shooting-types__divider" aria-hidden="true"></div>
               </div>
             </article>
           </div>
 
-          <!-- Card 2 (PHOTO -> TEXT как на макете) -->
+          <!-- Card 2 -->
           <div
             class="col-12 col-md-6 col-lg-3 d-flex"
             data-reveal
@@ -871,8 +874,8 @@
               <div class="shooting-types__media">
                 <img
                   class="shooting-types__image"
-                  src="assets/images/8.jpg"
-                  alt="Portrait Frauen"
+                  src="assets/images/5 (2).jpg"
+                  alt="Newborn"
                   loading="lazy"
                 />
               </div>
@@ -884,37 +887,41 @@
                   liebevollen und einzigartigen Bildern – Erinnerungen, die ein
                   Leben lang bleiben.
                 </p>
+
+                <div class="shooting-types__divider" aria-hidden="true"></div>
               </div>
             </article>
           </div>
 
-          <!-- Card 3 (TEXT -> PHOTO как на макете) -->
+          <!-- Card 3 -->
           <div
             class="col-12 col-md-6 col-lg-3 d-flex"
             data-reveal
             data-reveal-delay="320"
           >
             <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/8.jpg"
+                  alt="Family Time"
+                  loading="lazy"
+                />
+              </div>
+
               <div class="shooting-types__content">
                 <h3 class="text-bold-big mb-2">Family Time</h3>
                 <p class="text-small mb-0">
                   Die wundervolle Chance, unvergessliche Momente mit deinen
                   Liebsten in lebendigen Bildern festzuhalten.
                 </p>
-              </div>
 
-              <div class="shooting-types__media">
-                <img
-                  class="shooting-types__image"
-                  src="assets/images/1.jpg"
-                  alt="Modelportfolio"
-                  loading="lazy"
-                />
+                <div class="shooting-types__divider" aria-hidden="true"></div>
               </div>
             </article>
           </div>
 
-          <!-- Card 4 (PHOTO -> TEXT как на макете) -->
+          <!-- Card 4 -->
           <div
             class="col-12 col-md-6 col-lg-3 d-flex"
             data-reveal
@@ -924,8 +931,8 @@
               <div class="shooting-types__media">
                 <img
                   class="shooting-types__image"
-                  src="assets/images/20.jpg"
-                  alt="Portrait Männer"
+                  src="assets/images/4.jpg"
+                  alt="Cake Smash Shootings"
                   loading="lazy"
                 />
               </div>
@@ -936,6 +943,8 @@
                   Die besonderen Fotos zum ersten Geburtstag eures kleinen
                   Wunders.
                 </p>
+
+                <div class="shooting-types__divider" aria-hidden="true"></div>
               </div>
             </article>
           </div>
@@ -946,7 +955,7 @@
             href="quiz-1.html"
             class="btn-primary-custom text-bold-small shooting-types__btn"
           >
-            Kostenlos & unverbindlich anfragen
+            Kostenlos &amp; unverbindlich anfragen
           </a>
         </div>
       </div>
@@ -958,11 +967,11 @@
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section
       class="about section-padding bg-brand-secondary"
-      aria-label="Beauty- & Portraitfotografie"
+      aria-label="Frauenfotografie"
     >
       <div class="container">
         <div class="about__grid">
-          <!-- TEXT (row 1, col 2) -->
+          <!-- TEXT (справа на десктопе, сверху на мобилке) -->
           <div class="about__content">
             <div
               class="about__divider"
@@ -975,7 +984,7 @@
               JS Photography
             </h2>
 
-            <p class="text-bold-big mb-0" data-reveal data-reveal-delay="240">
+            <p class="text-bold-big mb-3" data-reveal data-reveal-delay="240">
               Natalie – deine Spezialistin für Frauenfotografie
             </p>
 
@@ -997,15 +1006,15 @@
             </p>
           </div>
 
-          <!-- LEFT TOP PHOTO (row 1, col 1) -->
+          <!-- PHOTO (слева на десктопе, ниже текста на мобилке — как promotional) -->
           <div
-            class="about__photo about__photo--left-top"
+            class="about__photo about__photo--left"
             data-reveal
             data-reveal-delay="0"
           >
             <img
-              src="assets/images/2.jpg"
-              alt="Larisiön Foto 1"
+              src="assets/images/54.jpg"
+              alt="Frauenfotografie Beispiel"
               loading="lazy"
             />
           </div>

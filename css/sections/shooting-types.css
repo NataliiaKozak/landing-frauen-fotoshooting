@@ -1,16 +1,13 @@
 /* ============================================================================
    SHOOTING TYPES (4 cards in one row)
+   Макет: фото сверху -> текст -> маленький divider (на мобилке скрыть)
    ============================================================================ */
 
 .shooting-types__card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 1rem; /* аккуратный воздух между блоками */
-}
-
-.shooting-types__content {
-  /* без лишних ограничений */
+  gap: 1rem; /* воздух между фото и контентом */
 }
 
 /* Фото — поведение как у vertical photo (promotional) */
@@ -29,6 +26,21 @@
   object-position: center 12%;
 }
 
+/* Контент */
+.shooting-types__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* аккуратный воздух внутри (заголовок/текст/divider) */
+}
+
+/* Divider под текстом (как в макете) */
+.shooting-types__divider {
+  width: 6rem; /* короткий */
+  height: 1px;
+  background: rgba(0, 0, 0, 0.55);
+  margin-top: 0.75rem; /* отступ от текста */
+}
+
 /* CTA */
 .shooting-types__cta {
   margin-top: 2.5rem;
@@ -38,23 +50,22 @@
 
 .shooting-types__btn {
   width: fit-content;
-  max-width: 28ch; /* ограничение ширины */
+  max-width: 28ch;
   white-space: normal;
   text-align: left;
 }
 
-/* <= 991.98: чуть другая точка кадрирования (как у promotional) */
+/* <= 991.98: чуть другая точка кадрирования */
 @media (max-width: 991.98px) {
   .shooting-types__image {
     object-position: center 16%;
   }
 }
 
-/* < 768: ВСЕ карточки -> фото сверху, текст снизу (как ты просила) */
+/* < 768: divider скрываем + CTA как в проекте */
 @media (max-width: 767.98px) {
-  .shooting-types__media {
-    order: -1; /* фото первым */
-    min-height: 20rem;
+  .shooting-types__divider {
+    display: none; /* по твоему ТЗ */
   }
 
   .shooting-types__image {
@@ -64,32 +75,19 @@
   .shooting-types__cta {
     margin-top: 2rem;
   }
+
   .shooting-types__btn {
     width: 100%;
     max-width: none;
-    justify-content: center;
     text-align: center;
     padding: 0 16px;
     font-size: 14px;
+    justify-content: center;
   }
 }
 
-/* < 576: фото чуть ниже по высоте + кнопка 100% */
 @media (max-width: 575.98px) {
-  .shooting-types__media {
-    min-height: 18rem;
-  }
-
   .shooting-types__image {
     object-position: center 20%;
   }
-
-  /* .shooting-types__btn {
-    width: 100%;
-    max-width: none;
-    justify-content: center;
-    text-align: center;
-    padding: 0 16px;
-    font-size: 14px;
-  } */
 }

@@ -1,6 +1,6 @@
 /* HERO */
 .hero {
-  border-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* divider */
@@ -14,14 +14,18 @@
 
 /* title logic (DESKTOP default) */
 .hero__title {
-  margin: 0;
+  margin: 2rem 0 1.25rem 0; 
   max-width: none;
+  line-height: var(--line-height-tight);
 }
 .hero__title-top {
   display: block;
 }
 .hero__title-desktop {
-  display: block;
+  /* display: block; */
+  display: flex; /* вместо block */
+  flex-direction: column;
+  gap: 0.15em;
 }
 .hero__title-desktop > span {
   display: block;
@@ -36,10 +40,9 @@
 /* media (DESKTOP default) */
 .hero__col-media {
   /* display: flex; */
-  display: block; /* убираем flex-растягивание */
+  display: block;
   align-self: start;
   padding-top: 4.5rem;
-  display: flex;
 }
 
 .hero__row {
@@ -74,11 +77,20 @@
   object-position: center 20%;
 }
 
+@media (max-width: 1200px) {
+  .hero__row {
+    --bs-gutter-x: 3rem; 
+  }
+}
 /* ============================================================================
    <992: как promotional
    ============================================================================ */
+
 @media (max-width: 991.98px) {
   /* hero row: без фиксированной высоты */
+  .hero {
+    padding-bottom: 1.5rem;
+  }
   .hero__row {
     /* min-height: auto;
     max-height: none; */
