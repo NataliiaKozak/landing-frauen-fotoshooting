@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Beauty & Portrait Fotoshooting" />
+    <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
+
+    <title>Kennst du mich bereits? - Quiz</title>
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://script.google.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https: data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/base-styles.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+
+    <!-- Section-specific CSS -->
+    <link href="css/quiz-thanks/quiz-header.css" rel="stylesheet" />
+    <link href="css/quiz-thanks/quiz-question.css" rel="stylesheet" />
+    <link href="css/sections/legal-footer.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- QUIZ HEADER -->
+    <header class="quiz-header bg-brand-primary">
+      <div class="container">
+        <div class="quiz-header__content">
+          <!-- ЛОГОТИП -->
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
+            <a
+              href="index.html"
+              class="quiz-header__logo-text text-h2"
+              style="color: #3d3d3d"
+            >
+              Logo
+            </a>
+          </div>
+
+          <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
+          <div
+            class="quiz-header__progress"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <p class="text-medium-small" style="color: #000000">
+              Weiter zum Gutschein
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- QUIZ QUESTION -->
+    <section class="quiz-question bg-brand-primary" data-question-id="q1">
+      <div class="container">
+        <!-- TITLE -->
+        <div class="quiz-question__title" data-reveal data-reveal-delay="240">
+          <h1 class="text-h2" style="color: #000000">
+            Kennst du mich bereits?
+          </h1>
+        </div>
+
+        <!-- CARDS -->
+        <div
+          class="quiz-question__cards quiz-question__cards--3"
+          
+        >
+          <!-- CARD 1 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="360"
+            data-answer="na_klar"
+            onclick="saveQuizAnswer('q1', 'na_klar')"
+          >
+            <div class="quiz-question__image-wrapper">
+              <img
+                src="assets/images/2.jpg"
+                alt="Ja, na klar!"
+                class="quiz-question__image"
+              />
+            </div>
+
+            <div class="quiz-question__option" aria-hidden="true">
+              <span class="quiz-question__option-text">Ja, na klar!</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="480"
+            data-answer="vom_Hören"
+            onclick="saveQuizAnswer('q1', 'vom_Hören')"
+          >
+            <div class="quiz-question__image-wrapper">
+              <img
+                src="assets/images/53.jpg"
+                alt="Ja, vom Hören"
+                class="quiz-question__image"
+              />
+            </div>
+
+            <div class="quiz-question__option" aria-hidden="true">
+              <span class="quiz-question__option-text">Ja, vom Hören</span>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="600"
+            data-answer="noch_nicht"
+            onclick="saveQuizAnswer('q1', 'noch_nicht')"
+          >
+            <div class="quiz-question__image-wrapper">
+              <img
+                src="assets/images/2.jpg"
+                alt="Nein, noch nicht"
+                class="quiz-question__image"
+              />
+            </div>
+
+            <div class="quiz-question__option" aria-hidden="true">
+              <span class="quiz-question__option-text">Nein, noch nicht</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL FOOTER -->
+    <section class="legal-footer bg-brand-primary">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12 text-center">
+            <nav class="legal-links">
+              <a href="impressum.html" class="legal-link">Impressum</a>
+              <span class="legal-separator">·</span>
+              <a href="datenschutz.html" class="legal-link"
+                >Datenschutzerklärung</a
+              >
+              <span class="legal-separator">·</span>
+              <a href="cookies.html" class="legal-link">Cookie Richtlinien</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Common JS -->
+    <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
+
+    <!-- Quiz JS -->
+    <script src="js/quiz.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+/* CSS Variables - Design Tokens */
+:root {
+  /* Brand Colors (change per client) */
+  --brand-primary: #f5ede0;
+  --brand-secondary: #eee3d0;
+  --brand-accent: #e2c08d;
+  --brand-text: #3d3d3d;
+  --brand-dark: #171717;
+  --brand-muted: #6c757d;
+  --brand-bg: #ffffff;
+  --brand-border: #e0e0e0;
+  --brand-frame-bg: #f8f8f8;
+
+  /* Neutral Colors (rarely change) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #7f7f7f;
+  --color-gray-light: #999999;
+  --color-gray-medium: #666666;
+  --color-placeholder: #7f7f7f;
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  --font-h1: 55px;
+  --font-h2: 45px;
+  --font-h3: 35px;
+  --font-h4: 28px;
+  /* --font-body: 22px; */
+  --font-body: 16px;
+  --font-weight-medium: 500;
+  /* --font-weight-medium: 200; */
+  --font-weight-bold: 700;
+  /* --font-weight-bold: 500; */
+
+  /* Line heights */
+  --line-height-tight: 1.1; /* вместо 100% */
+  /* --line-height-tight: 100%; */
+  /* --line-height-normal: normal; */
+  --line-height-relaxed: 1.6; /* больше воздуха */
+  --line-height-normal: 1.5;
+  --line-height-compact: 1.4; /* для маленьких абзацев/пояснений */
+
+  /* Spacing */
+  --spacing-section: 80px;
+  --spacing-section-mobile: 40px;
+
+  /* Breakpoints (for reference) */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1440px;
+
+  /* --------------------------------------------------------------------------
+     Aliases for compatibility with section CSS that expects other variable names/ добавил чат 
+     -------------------------------------------------------------------------- */
+  --color-border: var(--brand-border);
+  --color-frame-bg: var(--brand-frame-bg);
+  --brand-text-black: var(--color-black);
+  --brand-gold: var(--brand-accent);
+}
+
+/* ============================================================================
+   BACKGROUND CLASSES - Use these instead of inline styles
+   Client can change colors by editing :root variables above
+   ============================================================================ */
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+.bg-brand-secondary {
+  background-color: var(--brand-secondary);
+}
+.bg-brand-accent {
+  background-color: var(--brand-accent);
+}
+.bg-brand-white {
+  background-color: var(--color-white);
+}
+.bg-brand-dark {
+  background-color: var(--brand-dark);
+}
+
+/* Apply base styles globally */
+html,
+body {
+  font-family: var(--font-family);
+  color: var(--color-black);
+  background: var(--brand-primary);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal scroll from any element */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

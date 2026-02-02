@@ -1,0 +1,343 @@
+<!-- Стили в quiz-form.css -->
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Beauty & Portrait Fotoshooting" />
+    <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
+    <title>Jetzt anmelden - Quiz</title>
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://script.google.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https: data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/base-styles.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+
+    <!-- Section-specific CSS -->
+    <link href="css/quiz-thanks/quiz-header.css" rel="stylesheet" />
+    <link href="css/quiz-thanks/quiz-form.css" rel="stylesheet" />
+    <link href="css/sections/footer.css" rel="stylesheet" />
+    <link href="css/sections/legal-footer.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  QUIZ HEADER - Шапка страницы квиза (лого + прогресс)                     ║
+     ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <header class="quiz-header bg-brand-primary">
+      <div class="container">
+        <div class="quiz-header__content">
+          <!-- ════════════════════════════════════════════════════════════════════════
+           ЛОГОТИП
+           ════════════════════════════════════════════════════════════════════════ -->
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
+            <a
+              href="index.html"
+              class="quiz-header__logo-text text-h2"
+              style="color: #3d3d3d"
+            >
+              Logo
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  QUIZ FORM - Форма регистрации на фотосессию                               ║
+     ║  Включает: поля ввода, чекбокс согласия, кнопку отправки                   ║
+     ║    ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <section class="quiz-form bg-brand-primary">
+      <div class="container">
+        <div class="row quiz-form__row-top align-items-start g-4">
+          <!-- LEFT: тексты -> (моб) фото1 -> форма -->
+          <div class="col-lg-7 order-1">
+            <div class="quiz-form__content">
+              <div
+                class="quiz-form__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="120"
+              ></div>
+
+              <!-- ТЕКСТЫ -->
+              <div class="quiz-form__intro">
+                <p
+                  class="quiz-form__label text-bold-big"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Gutschein sichern!
+                </p>
+
+                <p
+                  class="quiz-form__headline text-medium-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Trage dich jetzt ein und sichere dir dein kostenloses
+                  Fotoshooting!
+                </p>
+
+                <p
+                  class="quiz-form__text text-medium-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Die Aktion findet nur vom 10.11. – 22.12.25 statt! Schnell
+                  sein lohnt sich – ich freue mich auf dich!
+                </p>
+
+                <p
+                  class="quiz-form__text text-bold-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Hinterlasse eine Anfrage für eine kostenlose Fotosession!
+                </p>
+              </div>
+
+              <!-- FOTO 1 (ТОЛЬКО МОБИЛКА): после текстов, до формы -->
+              <div
+                class="quiz-form__photo1 quiz-form__photo1--mobile d-lg-none"
+                data-reveal
+                data-reveal-delay="320"
+              >
+                <img
+                  src="assets/images/13.jpg"
+                  alt="Beauty & Portrait Fotoshooting"
+                  class="quiz-form__image"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- ФОРМА -->
+              <form
+                id="quiz-registration-form"
+                class="quiz-form__form"
+                onsubmit="return submitQuizForm(event);"
+                data-reveal
+                data-reveal-delay="400"
+              >
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    id="form-name"
+                    class="quiz-form__input"
+                    placeholder="Dein Vor- und Nachname"
+                    required
+                  />
+                </div>
+
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    id="form-email"
+                    class="quiz-form__input"
+                    placeholder="Deine E-Mail Adresse"
+                    required
+                  />
+                </div>
+
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="form-phone"
+                    class="quiz-form__input"
+                    placeholder="Deine Telefonnummer"
+                    required
+                  />
+                </div>
+
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  <select
+                    name="availability"
+                    id="form-availability"
+                    class="quiz-form__input quiz-form__select"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Wann seid ihr erreichbar (Mehrfachauswahl)
+                    </option>
+                    <option value="morgens">Morgens (9-12 Uhr)</option>
+                    <option value="mittags">Mittags (12-15 Uhr)</option>
+                    <option value="nachmittags">Nachmittags (15-18 Uhr)</option>
+                    <option value="abends">Abends (18-20 Uhr)</option>
+                  </select>
+                </div>
+
+                <div
+                  class="quiz-form__checkbox-wrapper"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  <input
+                    type="checkbox"
+                    name="privacy"
+                    id="form-privacy"
+                    class="quiz-form__checkbox"
+                    required
+                  />
+                  <label
+                    for="form-privacy"
+                    class="quiz-form__checkbox-label text-medium-small"
+                  >
+                    Ich habe die
+                    <a
+                      href="datenschutz.html"
+                      target="_blank"
+                      class="quiz-form__privacy-link"
+                    >
+                      Datenschutzhinweise
+                    </a>
+                    gelesen und verstanden.
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  class="quiz-form__submit btn-primary-custom"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
+                  Absenden
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT: Фото 1 (ТОЛЬКО ДЕСКТОП) -->
+          <div class="col-lg-5 order-2">
+            <div class="quiz-form__sidebar">
+              <div
+                class="quiz-form__photo1 quiz-form__photo1--desktop d-none d-lg-block"
+                data-reveal
+                data-reveal-delay="480"
+              >
+                <img
+                  src="assets/images/13.jpg"
+                  alt="Beauty & Portrait Fotoshooting"
+                  class="quiz-form__image"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Фото 2 (большой блок НИЖЕ всей двухколонки) -->
+        <div class="quiz-form__section-2" data-reveal data-reveal-delay="560">
+          <div class="quiz-form__photo2">
+            <img
+              src="assets/images/25.jpg"
+              alt="Beauty & Portrait Fotoshooting"
+              class="quiz-form__image quiz-form__image--secondary"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  FOOTER - Подвал с картой Google Maps                                       
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <footer class="footer bg-brand-white" id="contact">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77935.54669950697!2d9.679071046090232!3d52.37974254152489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2z0JPQsNC90L3QvtCy0LXRgA!5e0!3m2!1sru!2sde!4v1769144411314!5m2!1sru!2sde"
+              width="100%"
+              height="450"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin"
+              title="Standort auf Google Maps"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
+     ║  Фон: через CSS класс bg-brand-primary (редактируется в css/base-styles.css)   ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <section class="legal-footer bg-brand-primary">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <!-- ════════════════════════════════════════════════════════════════════════
+           ЮРИДИЧЕСКИЕ ССЫЛКИ
+           Impressum, Datenschutz, Cookie Richtlinien
+           ════════════════════════════════════════════════════════════════════════ -->
+          <div class="col-12 text-center">
+            <nav class="legal-links">
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="impressum.html" class="legal-link">Impressum</a>
+              <span class="legal-separator">·</span>
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="datenschutz.html" class="legal-link"
+                >Datenschutzerklärung</a
+              >
+              <span class="legal-separator">·</span>
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="cookies.html" class="legal-link">Cookie Richtlinien</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Common JS -->
+    <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
+
+    <!-- Page-specific JS -->
+    <script src="js/quiz.js"></script>
+  </body>
+</html>

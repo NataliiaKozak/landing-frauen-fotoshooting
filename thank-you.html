@@ -1,0 +1,331 @@
+<!-- Стили к секциям в thank-you-hero.css и author-footer.css -->
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Beauty & Portrait Fotoshooting" />
+    <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
+    <title>Anmeldung erfolgreich</title>
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://script.google.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https: data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/base-styles.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+
+    <!-- Section-specific CSS -->
+    <link href="css/sections/author-footer.css" rel="stylesheet" />
+    <link href="css/quiz-thanks/quiz-header.css" rel="stylesheet" />
+    <link href="css/quiz-thanks/thank-you-hero.css" rel="stylesheet" />
+    <link href="css/sections/legal-footer.css" rel="stylesheet" />
+    <!-- <link href="css/sections/footer.css" rel="stylesheet" /> -->
+  </head>
+  <body>
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  QUIZ HEADER - Шапка страницы квиза (лого + прогресс)                     ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <header class="quiz-header bg-brand-primary">
+      <div class="container">
+        <div class="quiz-header__content">
+          <!-- ════════════════════════════════════════════════════════════════════════
+           ЛОГОТИП
+           ════════════════════════════════════════════════════════════════════════ -->
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
+            <a
+              href="index.html"
+              class="quiz-header__logo-text text-h2"
+              style="color: #3d3d3d"
+            >
+              Logo
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  THANK YOU HERO - Страница благодарности после отправки формы             ║
+     ║      (используем author-footer секцию)                                    ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <section class="thank-you-hero bg-brand-primary">
+      <div class="container">
+        <div class="row align-items-start g-4 gx-lg-4">
+          <!-- LEFT  -->
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="thank-you-hero__content">
+              <div
+                class="thank-you-hero__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="120"
+              ></div>
+
+              <h1
+                class="thank-you-hero__title text-h2"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Super, vielen Dank!
+              </h1>
+
+              <div
+                class="thank-you-hero__description text-medium-small"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                <p>
+                  Ich freue mich darauf, dich zu deinem kostenlosen Fotoshooting
+                  willkommen zu heißen!
+                </p>
+                <p>
+                  Du hast die Möglichkeit, dich direkt in meinen Kalender
+                  einzutragen und dir deine bevorzugte Zeit zu sichern!
+                </p>
+              </div>
+
+              <!-- Primary button (на мобилке 100% ширины) -->
+              <a
+                href="#"
+                class="btn-primary-custom thank-you-hero__primary-btn"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Jetzt Termin wählen &amp; sichern!
+              </a>
+
+              <!-- Secondary buttons (на мобилке каждый на своей строке) -->
+              <div class="thank-you-hero__secondary-buttons">
+                <a
+                  href="tel:+4912345678"
+                  class="btn-outline-custom thank-you-hero__btn"
+                  data-reveal
+                  data-reveal-delay="360"
+                >
+                  Jetzt anrufen
+                </a>
+
+                <a
+                  href="https://wa.me/YOUR_NUMBER"
+                  class="btn-outline-custom thank-you-hero__btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-reveal
+                  data-reveal-delay="360"
+                >
+                  WhatsApp
+                </a>
+
+                <a
+                  href="mailto:info@kameramadle.de"
+                  class="btn-outline-custom thank-you-hero__btn"
+                  data-reveal
+                  data-reveal-delay="360"
+                >
+                  Mail mir!
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT  -->
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div
+              class="thank-you-hero__image-wrapper"
+              data-reveal
+              data-reveal-delay="240"
+            >
+              <img
+                src="assets/images/13.jpg"
+                alt="Beauty & Portrait Fotoshooting"
+                class="thank-you-hero__image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: AUTHOR/CONTACT (как на макете: фото слева, контент справа) -->
+    <section class="author-footer bg-brand-secondary">
+      <div class="container">
+        <div class="row align-items-start g-4 gx-lg-4">
+          <!-- LEFT PHOTO  -->
+          <div class="col-lg-6 order-1 order-lg-1">
+            <div
+              class="author-footer__photo"
+              data-reveal
+              data-reveal-delay="480"
+            >
+              <img
+                src="assets/images/25.jpg"
+                alt="Fotostudio"
+                class="author-footer__image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT  -->
+          <div class="col-lg-6 order-2 order-lg-2">
+            <div class="author-footer__content">
+              <div
+                class="author-footer__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="560"
+              ></div>
+
+              <h2
+                class="author-footer__name text-h3"
+                data-reveal
+                data-reveal-delay="560"
+              >
+                Larisiön – Fotostudio
+              </h2>
+
+              <p
+                class="author-footer__hint text-bold-small"
+                data-reveal
+                data-reveal-delay="560"
+              >
+                Du kannst mich natürlich auch selbst kontaktieren, um deine
+                Chancen zu erhöhen!
+              </p>
+
+              <div
+                class="author-footer__hours text-medium-small"
+                data-reveal
+                data-reveal-delay="560"
+              >
+                <p class="author-footer__hours-title">Öffnungszeiten:</p>
+                <p class="author-footer__hours-line">Mo – Sa: 09:00 – 20:00</p>
+                <p class="author-footer__hours-line">So: 10:00 – 20:00</p>
+              </div>
+
+              <div
+                class="author-footer__social"
+                data-reveal
+                data-reveal-delay="640"
+              >
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Facebook"
+                >
+                  <img
+                    src="assets/icons/icon-facebook.svg"
+                    alt="Facebook"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Instagram"
+                >
+                  <img
+                    src="assets/icons/icon-instagram.svg"
+                    alt="Instagram"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+                <a
+                  href="https://example.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Website"
+                >
+                  <img
+                    src="assets/icons/icon-website.png"
+                    alt="Website"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  FOOTER                 ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <!-- <footer class="footer bg-brand-primary" id="contact">
+      <div class="container">
+        <div class="footer__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77935.54669950697!2d9.679071046090232!3d52.37974254152489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2z0JPQsNC90L3QvtCy0LXRgA!5e0!3m2!1sru!2sde!4v1769144411314!5m2!1sru!2sde"
+            style="border: 0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            sandbox="allow-scripts allow-same-origin"
+            title="Standort auf Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </footer> -->
+
+    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <section class="legal-footer bg-brand-secondary">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <!-- ════════════════════════════════════════════════════════════════════════
+           ЮРИДИЧЕСКИЕ ССЫЛКИ
+           Impressum, Datenschutz, Cookie Richtlinien
+           ════════════════════════════════════════════════════════════════════════ -->
+          <div class="col-12 text-center">
+            <nav class="legal-links">
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="impressum.html" class="legal-link">Impressum</a>
+              <span class="legal-separator">·</span>
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="datenschutz.html" class="legal-link"
+                >Datenschutzerklärung</a
+              >
+              <span class="legal-separator">·</span>
+              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
+              <a href="cookies.html" class="legal-link">Cookie Richtlinien</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Common JS -->
+    <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
+
+    <!-- Page-specific JS -->
+    <!-- <script src="js/quiz.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,43 @@
+/* ============================================================================
+   PHOTOS (Section 2) — стабильно и похоже на макет по высоте
+   ============================================================================ */
+
+.photos__item {
+  overflow: hidden;
+  border-radius: 10px;
+
+  aspect-ratio: 3 / 4; /* портретная карточка */
+  width: 100%;
+}
+
+.photos__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 22%;  /* базовая фиксация лица/верха, чтобы не "прыгало" */
+}
+
+/* фото 2 (мужчина) — фокус ниже, чтобы был виден корпус */
+.photos .row > div:nth-child(2) .photos__item img {
+  object-position: center 60%;
+}
+
+/*   ниже фокус, чтобы не резало фото */
+@media (max-width: 575.98px) {
+  .photos__item img {
+    object-position: center 28%;
+  }
+
+  .photos .row > div:nth-child(2) .photos__item img {
+    object-position: center 55%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .photos__item--center-md {
+    width: calc(50% - 0.75rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

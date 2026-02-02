@@ -1,0 +1,112 @@
+/* ============================================================================
+   PROCESS (Section)
+   ============================================================================ */
+
+.process__title {
+  margin: 0 0 3rem 0; /* ИЗМЕНЕНИЕ: отступ после заголовка */
+}
+
+/* чтобы сетка и кнопка не прилипали */
+.process__grid {
+  margin-bottom: 3rem; /* ИЗМЕНЕНИЕ: отступ между карточками и кнопкой */
+}
+
+/* CTA */
+.process__cta {
+  display: flex;
+  justify-content: start; /* ИЗМЕНЕНИЕ: центрируем кнопку */
+}
+
+.process__btn {
+  /* по умолчанию btn-primary-custom already inline-flex */
+  text-align: center;
+}
+
+/* Card */
+.process-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 28px 28px 26px;
+  position: relative;
+  min-height: 200px;
+}
+
+/* номер */
+.process-card__num {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: var(--brand-secondary);
+  color: var(--brand-text);
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+/* контент с отступом от номера */
+.process-card__title,
+.process-card__desc {
+  padding-left: 66px; /* 44 + отступ */
+}
+
+/* ИЗМЕНЕНИЕ: нормальный отступ между заголовком и текстом */
+.process-card__title {
+  margin: 0 0 0.75rem 0;
+  line-height: var(--line-height-tight);
+}
+
+.process-card__desc {
+  margin: 0;
+}
+
+/* Ровная высота колонок */
+.process .row > [class*='col-'] {
+  align-self: stretch;
+}
+
+/* ===== адаптив ===== */
+@media (max-width: 991.98px) {
+  .process__title {
+    margin-bottom: 2.25rem;
+  }
+
+  .process__grid {
+    margin-bottom: 2.25rem;
+  }
+
+  .process-card {
+    padding: 24px 22px 22px;
+    min-height: auto;
+  }
+
+  .process-card__num {
+    top: 16px;
+    left: 16px;
+  }
+
+  .process-card__title,
+  .process-card__desc {
+    padding-left: 62px;
+  }
+
+  .process-card__title {
+    margin-bottom: 0.65rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .process__title {
+    margin-bottom: 1.75rem;
+  }
+
+  .process__grid {
+    margin-bottom: 1.75rem;
+  }
+}

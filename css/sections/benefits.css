@@ -1,0 +1,68 @@
+/* ============================================================================
+   BENEFITS (Section 4)
+   ============================================================================ */
+
+.benefits__card {
+  /* карточка без фона/тени (как на скрине) */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* gap: 1rem; */
+}
+
+.benefits__media {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3; /* широкий формат */
+  margin-bottom: 1.5rem; /* было меньше — теперь больше */
+}
+
+.benefits__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Заголовок карточки */
+.benefits__title {
+  margin: 0; /* убираем дефолтные отступы h3 */
+  line-height: var(--line-height-tight);
+}
+
+.benefits__divider {
+  /* width: 12rem;
+  max-width: 100%; */
+  width: 100%;
+  height: 1px;
+  background: var(--color-black);
+  opacity: 0.6;
+  margin-top: 0.9rem; /* "выше" чем было с gap */
+  margin-bottom: 1rem;
+}
+
+/* на <1200 уменьшаем заголовок и разрешаем перенос слов,
+   чтобы текст НЕ вылазил и не наезжал на соседнюю карточку */
+@media (max-width: 1199.98px) and (min-width: 768px) {
+  .benefits__title.text-h2 {
+    font-size: 34px; /* было 45px, как в text-h2 */
+    line-height: 1.15;
+    overflow-wrap: anywhere; /* чтобы длинные слова не "лезли" в соседнюю колонку */
+  }
+}
+
+/* <765: карточка колонкой, divider убираем, и делаем фото->title
+   таким же, как title->text (теперь это 1.5rem) */
+@media (max-width: 767.98px) {
+  .benefits__divider {
+    display: none; /* как ты просила */
+  }
+
+  /* фото -> заголовок тоже 1.5rem (уже стоит) */
+  .benefits__media {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 1.5rem;
+  }
+}
