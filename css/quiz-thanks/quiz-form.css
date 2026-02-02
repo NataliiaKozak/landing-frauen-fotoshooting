@@ -6,6 +6,14 @@
   padding: 24px 0 48px 0;
 }
 
+.quiz-form__intro {
+  margin-bottom: 10px; /* отделяем интро от формы */
+}
+
+.quiz-form__intro .text-bold-small {
+  margin-bottom: 16px !important; /* чтобы не прилипало */
+}
+
 /* Divider внутри секции (на одном уровне с фото 1) */
 .quiz-form__divider {
   width: 6rem;
@@ -13,7 +21,7 @@
   background: rgba(0, 0, 0, 0.55);
 
   /* отступ под divider, чтобы текст не прилипал */
-  margin: 0 0 18px 0;
+  margin: 0 0 22px 0;
 }
 
 /* LEFT: тексты + форма */
@@ -26,12 +34,12 @@
 }
 
 .quiz-form__headline {
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
   line-height: 1.15;
 }
 
 .quiz-form__text {
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
   line-height: 1.55;
 }
 
@@ -62,7 +70,7 @@
 
 /* Form */
 .quiz-form__form {
-  margin-top: 16px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -155,6 +163,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-top: 6px;
 }
 
 .quiz-form__image {

@@ -1,25 +1,21 @@
-/* ============================================================================
-   THANK YOU HERO - Страница благодарности (Секция 1)
-   ============================================================================ */
-
 .thank-you-hero {
-  padding: 50px 0 60px;
+  padding: 56px 0 56px;
 }
 
 .thank-you-hero__content {
-  max-width: 600px;
+  max-width: 560px;
 }
 
-/* Divider как в других секциях */
+/* Divider */
 .thank-you-hero__divider {
   width: 6rem;
   height: 1px;
   background: rgba(0, 0, 0, 0.55);
-  margin: 10px 0 30px 0;
+  margin: 0 0 30px 0;
 }
 
 .thank-you-hero__title {
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 
 .thank-you-hero__description {
@@ -28,14 +24,37 @@
 }
 
 .thank-you-hero__description p {
-  margin: 0 0 18px 0;
+  margin: 0 0 30px 0;
 }
 
 .thank-you-hero__description p:last-child {
   margin-bottom: 0;
 }
 
-/* Фото справа — как в promotional/quiz-form: “коробка” + crop */
+.thank-you-hero__secondary-buttons {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 18px; /* воздух по горизонтали */
+  row-gap: 14px; /* воздух по вертикали */
+  justify-content: start;
+  align-items: center;
+}
+
+/* все outline-кнопки по ширине текста */
+.thank-you-hero__btn.btn-outline-custom {
+  width: fit-content;
+  min-height: 46px;
+  padding: 0 18px;
+  justify-content: center;
+}
+
+/* 3-я кнопка: перенос на новую строку*/
+.thank-you-hero__secondary-buttons .thank-you-hero__btn:nth-child(3) {
+  grid-column: 1;
+}
+
+/* Фото справа */
 .thank-you-hero__image-wrapper {
   width: 100%;
   max-width: 28rem;
@@ -48,70 +67,35 @@
 .thank-you-hero__image {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center 12%;
-  display: block;
 }
 
-/* Кнопки */
-.thank-you-hero__primary-btn {
-  display: inline-flex;
-  /* margin-top: 6px; */
-  margin-top: 35px;
-  margin-bottom: 30px;
-}
-
-.thank-you-hero__secondary-buttons {
-  margin-top: 18px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* чуть компактнее outline-кнопки в этом блоке */
-.thank-you-hero__btn.btn-outline-custom {
-  min-height: 50px;
-  padding: 0 18px;
-}
-
-/* ============================================================================
-   RESPONSIVE
-   ============================================================================ */
+/* Responsive */
 @media (max-width: 991.98px) {
-  .thank-you-hero__primary-btn {
-    margin-top: 18px;
-  }
-  /* primary — на всю ширину */
-  .thank-you-hero__primary-btn.btn-primary-custom {
-    width: 100%;
-    justify-content: center;
+  .thank-you-hero__content {
+    max-width: 100%;
   }
 
-  /* secondary — каждый на своей строке */
+  .thank-you-hero__image-wrapper {
+    max-width: 100%;
+  }
+
   .thank-you-hero__secondary-buttons {
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
     gap: 10px;
-    margin-top: 12px;
   }
 
   .thank-you-hero__btn.btn-outline-custom {
     width: 100%;
     justify-content: center;
   }
-
-  /* фото — на всю ширину контейнера */
-  .thank-you-hero__image-wrapper {
-    max-width: 100%;
-  }
-
-  .thank-you-hero__content {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 576px) {
   .thank-you-hero {
-    padding: 40px 0 48px;
+    padding: 44px 0 44px;
   }
 }
